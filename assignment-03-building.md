@@ -1,4 +1,4 @@
-# The American Enviornmental Economy And What It Really Costs
+# The American Environmental Economy and What It Really Costs
 
 ## The question
 
