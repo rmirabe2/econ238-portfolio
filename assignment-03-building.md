@@ -8,7 +8,7 @@ America says it wants a clean-energy future, but building the power lines, react
 
 <audio controls src="week3-conversation.mp3"></audio>
 
-[Can't play it? Download the recording](week3-conversation.mp3) · Recorded with [partner's first name or "a classmate"], who agreed to public posting.
+[Can't play it? Download the recording](week3-conversation.mp3) · Recorded with Classmate.
 
 ## Synthesis
 
