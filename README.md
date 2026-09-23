@@ -4,5 +4,5 @@ Welcome! This site collects my public work for ECON 238. Each page is a finished
 
 ## Assignments
 
-- [Week 1: Before You Say No, at Least Hear Out the Econ on Data Centers](assignment-01-data-centers.md)
 - [Week 3: The American Environmental Economy and What It Really Costs](assignment-03-building.md)
+- [Week 1: Before You Say No, at Least Hear Out the Econ on Data Centers](assignment-01-data-centers.md)
