@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catch Shares Versus Race-to-Fish | ECON 238 SHOW ME</title>
+<style>
+:root{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--line:#dddcd6;--card:#f3f2ee;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--ink:#ffffff;--ink2:#c3c2b7;--line:#3a3a37;--card:#252523;--s1:#3987e5;--s2:#d95926;--s3:#199e70}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:900px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:2rem;line-height:1.15;margin:.2em 0}
+h2{font-size:1.25rem;margin:2em 0 .4em}
+.kicker,.note,figcaption,small{color:var(--ink2);font-size:.86rem}
+.lede{font-size:1.15rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.card{background:var(--card);border-radius:10px;padding:12px 14px}
+.card h3{margin:0 0 2px;font-size:1rem}
+.card p{margin:0 0 8px;color:var(--ink2);font-size:.8rem}
+.row{display:grid;grid-template-columns:104px 1fr;align-items:center;gap:6px;margin:5px 0;font-size:.82rem}
+.track{position:relative;height:18px}
+.bar{position:absolute;left:0;top:0;height:18px;border-radius:0 4px 4px 0;min-width:2px}
+.val{position:absolute;top:0;line-height:18px;padding-left:6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:12px 0}
+.controls label{display:block;font-size:.9rem}
+input[type=range]{width:100%}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:right}
+th:first-child,td:first-child{text-align:left}
+.scroll{overflow-x:auto}
+svg text{fill:var(--ink2);font-size:12px}
+a{color:inherit}
+.key span{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 5px 0 12px}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:6px 9px;border-radius:6px;font-size:.8rem;max-width:240px;display:none;z-index:9}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">SHOW ME exhibit · ECON 238 · Topic POL-67 · Ryker Mirabella</p>
+<h1>Catch Shares Versus Race-to-Fish</h1>
+<p class="lede">Same ocean, same fish, same biology. Change only the rule about who may catch the fish, and you get three very different fisheries.</p>
+
+<h2>Three rules, one fish stock</h2>
+<p>This is a simple fishery model. The fish grow by the same rule in every case. The only thing that changes is the management rule:</p>
+<ul>
+<li><b>Open access.</b> Anyone can fish, with no limit on the catch.</li>
+<li><b>Seasonal quota.</b> The regulator caps the total catch and closes the season when the cap is hit. Nobody owns a share, so every boat races for it. Fishermen call this a derby.</li>
+<li><b>Catch shares.</b> The same total cap, but each boat owns a tradable share of it (an individual tradable quota), so there is nothing to race for.</li>
+</ul>
+<p class="key" aria-hidden="true"><span style="background:var(--s1);margin-left:0"></span>Open access<span style="background:var(--s2)"></span>Seasonal quota<span style="background:var(--s3)"></span>Catch shares</p>
+<div class="grid" id="charts"></div>
+<p class="note">Hover or tap a bar for what it means. Long-run outcomes of the model, not a forecast for any real fishery.</p>
+
+<h2>Change the economics and watch it hold</h2>
+<div class="controls">
+<label>Fish price: <b id="pv"></b> per ton<input id="p" type="range" min="1200" max="3000" step="100" value="2000"></label>
+<label>Running cost: <b id="vv"></b> per boat per day<input id="v" type="range" min="300" max="800" step="50" value="600"></label>
+</div>
+<p id="story"></p>
+
+<h2>Why open access catches less</h2>
+<figure style="margin:0">
+<svg id="curve" viewBox="0 0 640 300" role="img" aria-label="Sustainable catch at each stock size, with the open access and quota outcomes marked" style="width:100%;height:auto"></svg>
+<figcaption>The curve is the catch the stock can replace every year at each stock size. It is the same curve under all three rules. Open access fishes the stock down the left side of the hill, so there are fewer fish and a smaller catch. Both quota systems hold the stock at the top.</figcaption>
+</figure>
+
+<h2>The numbers</h2>
+<div class="scroll"><table id="tbl"></table></div>
+
+<h2>Did this happen anywhere real?</h2>
+<p>Alaska's Pacific halibut fishery ran as a derby until 1995, then switched to individual quotas with the same kind of catch cap.</p>
+<div class="scroll"><table>
+<tr><th>Alaska halibut</th><th>Derby (before 1995)</th><th>Individual quotas (after)</th></tr>
+<tr><td>Season</td><td>24-hour openings in many areas</td><td>245 days (March 15 to November 15)</td></tr>
+<tr><td>Vessels landing halibut</td><td>4,206 (1990)</td><td>1,613 (1999)</td></tr>
+<tr><td>Search and rescue missions per year</td><td>28 (1992 to 1994 average)</td><td>7 to 15 (1995 to 1999)</td></tr>
+</table></div>
+<p class="note">Source: Hartley and Fina, FAO Fisheries Technical Paper 412 (link below). The model above is not fitted to halibut; this table is here to show the same pattern in real data.</p>
+
+<h2>How this was built</h2>
+<p>I asked an AI (Claude) to build a standard Gordon-Schaefer fishery model, solve it for the long-run outcome under each rule, and draw the charts. I chose the question, the three rules, and the round-number inputs. The page recomputes everything in your browser, so you can read the code with View Source.</p>
+<ul>
+<li><b>Biology (identical in all three):</b> yearly growth = 0.4 × stock × (1 − stock ÷ 100), stock in thousand tons. The stock can replace at most 10 thousand tons a year, when it sits at 50.</li>
+<li><b>Catch per boat per day:</b> 0.02 tons for every thousand tons of fish in the water (1 ton a day when the stock is 50).</li>
+<li><b>Costs:</b> a running cost per day fished, plus $60,000 a year to own a boat. The fishing window is 200 good-weather days.</li>
+<li><b>Open access:</b> boats keep entering until an average boat earns zero profit.</li>
+<li><b>Seasonal quota:</b> catch capped at 10 thousand tons. Boats keep entering until the race shortens the season enough that an average boat earns zero profit.</li>
+<li><b>Catch shares:</b> the same cap, caught by the smallest fleet that can do it in the full window.</li>
+<li><b>Safety is an assumption, not a result:</b> I assume 1 day in 5 has bad weather, and that only derby boats go out in it, because a day in port is fish lost to a rival. The halibut rescue numbers above are the real-world check on that assumption.</li>
+</ul>
+<p><b>What the model leaves out:</b> prices that rise when fish is sold fresh all year, who gets the shares for free, crew jobs lost when the fleet shrinks, and cheating. Good next questions: who captured the rent in Alaska, and what happened to the towns that lost boats?</p>
+
+<h2>Sources</h2>
+<ul>
+<li>M. Hartley and M. Fina, "Changes in fleet capacity following the introduction of individual vessel quotas in the Alaskan Pacific halibut and sablefish fishery," FAO Fisheries Technical Paper 412. <a href="https://www.fao.org/4/y2498e/y2498e0f.htm">fao.org/4/y2498e/y2498e0f.htm</a></li>
+<li>H. Scott Gordon (1954), "The economic theory of a common-property resource: the fishery," Journal of Political Economy 62(2), and M. B. Schaefer (1954), for the model.</li>
+<li>NOAA Fisheries, Pacific Halibut and Sablefish IFQ Program. <a href="https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/pacific-halibut-and-sablefish-individual-fishing-quota-ifq-program">fisheries.noaa.gov</a></li>
+</ul>
+<p><a href="./">Back to portfolio</a></p>
+</main>
+<div id="tip"></div>
+<script>
+var K=100,R=0.4,Q=0.02,T=200,F=60000,BAD=0.2;
+var NAMES=['Open access','Seasonal quota','Catch shares'],COL=['var(--s1)','var(--s2)','var(--s3)'];
+function grow(x){return R*x*(1-x/K)}
+function model(p,v){
+  var out=[];
+  var cpd=(v+F/T)/p, x=cpd/Q, c=grow(x)*1000, bd=c/cpd;
+  out.push({stock:x,catch:c/1000,boats:bd/T,season:T,storm:0,rent:0});
+  var xs=K/2, tac=grow(xs)*1000, d=Q*xs, s=Math.min(T,F/(p*d-v)), n=tac/(d*s);
+  out.push({stock:xs,catch:tac/1000,boats:n,season:s,storm:BAD*100,rent:(p*tac-v*tac/d-F*n)/1e6});
+  var m=tac/(d*T);
+  out.push({stock:xs,catch:tac/1000,boats:m,season:T,storm:0,rent:(p*tac-v*tac/d-F*m)/1e6});
+  return out;
+}
+function f(n,dp){return n.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp})}
+var METRICS=[
+ ['boats','Boats in the fleet','Effort: how much capital chases the fish',0,'',' boats'],
+ ['season','Season length','Days the fishery is open',0,'',' days'],
+ ['catch','Catch per year','Thousand tons landed',1,'',' thousand tons'],
+ ['stock','Fish left in the water','Thousand tons of stock',1,'',' thousand tons'],
+ ['storm','Fishing days in bad weather','Safety (assumed, see notes)',0,'','%'],
+ ['rent','Rent per year','Profit left after all costs',1,'$',' million']
+];
+var tip=document.getElementById('tip');
+function show(e,t){tip.textContent=t;tip.style.display='block';var x=Math.min(e.clientX+12,innerWidth-250);tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px'}
+function hide(){tip.style.display='none'}
+function draw(){
+  var p=+document.getElementById('p').value,v=+document.getElementById('v').value,r=model(p,v);
+  document.getElementById('pv').textContent='$'+f(p,0);document.getElementById('vv').textContent='$'+f(v,0);
+  var box=document.getElementById('charts');box.innerHTML='';
+  METRICS.forEach(function(m){
+    var max=Math.max.apply(null,r.map(function(o){return o[m[0]]}))||1;
+    var card=document.createElement('div');card.className='card';
+    var h=document.createElement('h3');h.textContent=m[1];card.appendChild(h);
+    var s=document.createElement('p');s.textContent=m[2];card.appendChild(s);
+    r.forEach(function(o,i){
+      var val=o[m[0]],pct=Math.max(0,val/max*62);
+      var row=document.createElement('div');row.className='row';
+      var lab=document.createElement('span');lab.textContent=NAMES[i];row.appendChild(lab);
+      var tr=document.createElement('div');tr.className='track';
+      var b=document.createElement('div');b.className='bar';b.style.width=pct+'%';b.style.background=COL[i];
+      var t=document.createElement('span');t.className='val';t.style.left=pct+'%';t.textContent=m[4]+f(val,m[3])+(m[0]=='storm'?'%':'');
+      tr.appendChild(b);tr.appendChild(t);row.appendChild(tr);
+      var msg=NAMES[i]+': '+m[4]+f(val,m[3])+m[5]+'. '+m[2]+'.';
+      row.addEventListener('mousemove',function(e){show(e,msg)});row.addEventListener('mouseleave',hide);
+      row.addEventListener('click',function(e){show(e,msg)});
+      card.appendChild(row);
+    });
+    box.appendChild(card);
+  });
+  var tb='<tr><th>Measure</th><th>Open access</th><th>Seasonal quota</th><th>Catch shares</th></tr>';
+  METRICS.forEach(function(m){tb+='<tr><td>'+m[1]+(m[5]=='%'?' (%)':' ('+(m[4]?'$ ':'')+m[5].trim()+')')+'</td>'+r.map(function(o){return '<td>'+f(o[m[0]],m[3])+'</td>'}).join('')+'</tr>'});
+  document.getElementById('tbl').innerHTML=tb;
+  document.getElementById('story').textContent='At these prices, open access ends with '+f(r[0].boats,0)+' boats sharing a stock fished down to '+f(r[0].stock,1)+' thousand tons, and no profit. The seasonal quota saves the fish but not the money: '+f(r[1].boats,0)+' boats cram the whole catch into '+f(r[1].season,0)+' days and still earn nothing. Catch shares land the same '+f(r[2].catch,1)+' thousand tons with '+f(r[2].boats,0)+' boats over '+f(r[2].season,0)+' days and keep $'+f(r[2].rent,1)+' million a year.';
+  curve(r);
+}
+function curve(r){
+  var W=640,H=300,L=52,B=40,Tp=18,Rt=16,sx=function(x){return L+x/K*(W-L-Rt)},sy=function(y){return H-B-y/11*(H-B-Tp)};
+  var s='';
+  [0,2,4,6,8,10].forEach(function(y){s+='<line x1="'+L+'" x2="'+(W-Rt)+'" y1="'+sy(y)+'" y2="'+sy(y)+'" stroke="var(--line)"/><text x="'+(L-8)+'" y="'+(sy(y)+4)+'" text-anchor="end">'+y+'</text>'});
+  [0,25,50,75,100].forEach(function(x){s+='<text x="'+sx(x)+'" y="'+(H-B+18)+'" text-anchor="middle">'+x+'</text>'});
+  s+='<text x="'+((L+W-Rt)/2)+'" y="'+(H-4)+'" text-anchor="middle">Fish in the water (thousand tons)</text>';
+  s+='<text x="14" y="'+(H/2)+'" text-anchor="middle" transform="rotate(-90 14 '+(H/2)+')">Sustainable catch (thousand tons a year)</text>';
+  var d='';for(var x=0;x<=100;x+=1){d+=(x?'L':'M')+sx(x).toFixed(1)+' '+sy(grow(x)).toFixed(1)}
+  s+='<path d="'+d+'" fill="none" stroke="var(--ink2)" stroke-width="2"/>';
+  var a=r[0],q=r[1];
+  s+='<circle cx="'+sx(a.stock)+'" cy="'+sy(a.catch)+'" r="7" fill="var(--s1)" stroke="var(--bg)" stroke-width="2"><title>Open access: stock '+f(a.stock,1)+', catch '+f(a.catch,1)+'</title></circle>';
+  s+='<text x="'+(sx(a.stock)+12)+'" y="'+(sy(a.catch)+16)+'" style="fill:var(--ink)">Open access: catch '+f(a.catch,1)+'</text>';
+  s+='<circle cx="'+(sx(q.stock)-5)+'" cy="'+sy(q.catch)+'" r="7" fill="var(--s2)" stroke="var(--bg)" stroke-width="2"><title>Seasonal quota: stock 50, catch 10</title></circle>';
+  s+='<circle cx="'+(sx(q.stock)+5)+'" cy="'+sy(q.catch)+'" r="7" fill="var(--s3)" stroke="var(--bg)" stroke-width="2"><title>Catch shares: stock 50, catch 10</title></circle>';
+  s+='<text x="'+(sx(q.stock)+18)+'" y="'+(sy(q.catch)-8)+'" style="fill:var(--ink)">Both quota systems: catch '+f(q.catch,1)+'</text>';
+  document.getElementById('curve').innerHTML=s;
+}
+document.getElementById('p').addEventListener('input',draw);document.getElementById('v').addEventListener('input',draw);draw();
+</script>
+</body>
+</html>
