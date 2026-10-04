@@ -1,13 +1,13 @@
 # Plastic Bag Bans, Before and After
 
-*SHOW ME exhibit · ECON 238 · My own topic · Work in progress*
+*SHOW ME exhibit · ECON 238 · My own topic*
 
 ## The question
 
-When a city or state bans or taxes plastic bags, what actually changes? This page will compare bag use, substitute bags, and litter before and after the policy.
+When a city or state bans or taxes plastic bags, what actually changes?
 
-## Status
+## The approach
 
-This exhibit is being built. The data, the chart, and the sources will appear on this page.
+Places that banned plastic bags or put a fee on them, compared before and after the policy: how many bags shoppers used, what they switched to, and how much bag litter was found.
 
 [Back to portfolio](./)
