@@ -4,6 +4,7 @@ Welcome! This site collects my public work for ECON 238. Each page is a finished
 
 ## Assignments
 
+- [Week 8 History Lecture: Opera in the Jungle, The Fall of the Rubber City and the Legend of the Stolen Seeds](https://rmirabe2.github.io/econ238-portfolio/assignment-08-opera-in-the-jungle.html)
 - [Week 7 Ballot Initiative: Proposition 7, Finish Yucca Mountain and Pay Nevada for It](https://rmirabe2.github.io/econ238-portfolio/assignment-07-yucca-mountain.html)
 - [Week 5 SHOW ME: Catch Shares Versus Race-to-Fish](https://rmirabe2.github.io/econ238-portfolio/assignment-05-catch-shares.html)
 - [Week 5 SHOW ME: Plastic Bag Bans, Before and After](https://rmirabe2.github.io/econ238-portfolio/assignment-05-plastic-bag-bans.html)
