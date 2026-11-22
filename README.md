@@ -4,6 +4,7 @@ Welcome! This site collects my public work for ECON 238. Each page is a finished
 
 ## Assignments
 
+- [Week 12 Coase: The Problem of Social Cost, My Notes](https://rmirabe2.github.io/econ238-portfolio/assignment-12-coase.html) ([PDF](https://rmirabe2.github.io/econ238-portfolio/Week_12_Coase_Notes.pdf))
 - [Week 11 Batsh!t Crazy Idea: Come Get Your Gas, or I'll Light It on Fire](https://rmirabe2.github.io/econ238-portfolio/assignment-11-come-get-your-gas.html)
 - [Week 10 MOAT Notice: The University of Rochester Should Keep Thinking Human](https://rmirabe2.github.io/econ238-portfolio/assignment-10-moat-notice.html) ([discussion audio](https://rmirabe2.github.io/econ238-portfolio/week10-moats-conversation.mp3))
 - [Week 8 History Lecture: Opera in the Jungle, The Fall of the Rubber City and the Legend of the Stolen Seeds](https://rmirabe2.github.io/econ238-portfolio/assignment-08-opera-in-the-jungle.html)
